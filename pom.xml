@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example.jwtexemplo</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.15.0</version>
+        </dependency>
+    </dependencies>
+
+</dependencyManagement>
+
+    <dependencies>
+<dependency>
+<groupId>jakarta.platform</groupId>
+<artifactId>jakarta.jakartaee-api</artifactId>
+<version>10.0.0</version>
+<scope>provided</scope>
+</dependency>
+<dependency>
+<groupId>io.jsonwebtoken</groupId>
+<artifactId>jjwt</artifactId>
+<version>0.12.3</version>
+</dependency>
+
+<!-- Grizzly (Servidor HTTP embutido) -->
+<dependency>
+<groupId>org.glassfish.jersey.containers</groupId>
+<artifactId>jersey-container-grizzly2-http</artifactId>
+<version>3.0.8</version>
+</dependency>
+<!-- Jersey para suporte JAX-RS -->
+<dependency>
+<groupId>org.glassfish.jersey.core</groupId>
+<artifactId>jersey-server</artifactId>
+<version>3.0.8</version>
+</dependency>
+
+<dependency>
+<groupId>org.glassfish.jersey.inject</groupId>
+<artifactId>jersey-hk2</artifactId>
+<version>3.0.8</version>
+</dependency>
+
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-json-jackson</artifactId>
+    <version>3.0.8</version>
+</dependency>
+
+</dependencies>
+
+</project>
