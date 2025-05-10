@@ -20,13 +20,15 @@ public class OAuthService {
     public String gerarToken(String clientId, String clientSecret) {
         Cliente cliente = clienteDAO.buscarClientePorId(clientId);
         if (cliente != null && cliente.getClientSecret().equals(clientSecret)) {
-            return Jwts.builder()
+            String token = Jwts.builder()
                 .issuer("MeuServidorOAuth")
                 .subject(clientId)
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + 3600000))
                 .signWith(getSigningKey())
                 .compact();
+            System.out.println("Token JWT gerado: " + token);
+            return token;
         }
         return null;
     }
