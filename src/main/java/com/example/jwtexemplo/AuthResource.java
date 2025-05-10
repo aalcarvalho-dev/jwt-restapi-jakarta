@@ -15,7 +15,7 @@ public class AuthResource {
         USUARIOS.put("admin", "1234"); // Usuário e senha fictícios
     }
 
-    @POST
+/*     @POST
     public Response autenticar(@QueryParam("usuario") String usuario,
             @QueryParam("senha") String senha) {
         System.out.println("entrou");
@@ -24,5 +24,5 @@ public class AuthResource {
             return Response.ok("{\"token\": \"" + token + "\"}").build();
         }
         return Response.status(Response.Status.UNAUTHORIZED).entity("{\"error\": \"Credenciais inválidas\"}").build();
-    }
+    } */
 }

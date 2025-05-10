@@ -12,7 +12,7 @@ public class OAuthService {
     private static final String SECRET_KEY = "9128349182304981029348asdlkfjasdf091234884848484";
     private ClienteDAO clienteDAO = new ClienteDAO();
 
-    private static SecretKey getSigningKey() {
+/*     private static SecretKey getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }
@@ -31,5 +31,5 @@ public class OAuthService {
             return token;
         }
         return null;
-    }
+    } */
 }
