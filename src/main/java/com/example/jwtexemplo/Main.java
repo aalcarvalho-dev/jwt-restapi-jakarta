@@ -1,9 +1,12 @@
 package com.example.jwtexemplo;
 
 import java.net.URI;
-import org.glassfish.jersey.jackson.JacksonFeature;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
+import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 
 public class Main {
@@ -19,6 +22,17 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
+        ClienteService clienteService = new ClienteService();
+
+        // Definir permissões do cliente
+        Map<String, Object> permissoes = new HashMap<>();
+        permissoes.put("acesso", "LEITURA");
+        permissoes.put("limite_requisicoes", 1000);
+
+        // Registrar novo cliente
+        clienteService.registrarCliente("app_cliente_123", "senhaSuperSegura", permissoes);
+
         final HttpServer server = startServer();
         System.out.println("Servidor iniciado em " + BASE_URI);
         System.out.println(JWTUtil.gerarToken("admin"));
